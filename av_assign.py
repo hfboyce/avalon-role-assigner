@@ -127,7 +127,7 @@ def assigning_roles(player_names, percival=False, morgana=False, oberon=False):
     
     for key, value in players_to_roles.items():
         file = open(key, "w") 
-        file.write("Hi " + key +", \n")
+        file.write("Hi " + key.capitalize() +", \n")
         file.write("Your role in this game is: "+ value + '\n')  
         file.write('\n')  
         file.write("The players in this game are:"  + '\n')  
