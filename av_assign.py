@@ -13,7 +13,8 @@ def get_value(dictionary,value):
 
 def assigning_roles(player_names, percival=False, morgana=False, oberon=False):
     
-    """Gets and prints the spreadsheet's header columns
+    """
+    Creates files with each players role designation and the information they are privy to know
 
     Parameters
     ----------
@@ -158,7 +159,7 @@ def assigning_roles(player_names, percival=False, morgana=False, oberon=False):
             for bad_guy in evil_players_to_evil:
                  file.write( "- " + bad_guy + '\n') 
             if oberon == True:
-                file.write("Since you are playing with Oberon, there is a third unknown evil player "  + '\n')
+                file.write("Since you are playing with Oberon, there is a third unknown evil player."  + '\n')
         
         if value == "Oberon":
             file.write("You are evil but you are unable to know who else is evil as the Oberon role."  + '\n')
