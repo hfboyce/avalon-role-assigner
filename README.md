@@ -11,6 +11,7 @@ You will get an email from google:
 > Critical security alert for your linked Google Account
 
 This if you changing your settings temporarily. 
+
 3. In your root type the following:
 ```
 python3 avalon.py
