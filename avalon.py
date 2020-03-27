@@ -22,19 +22,12 @@ player_names = [ ]
 email_dict = {}  
 
 # Inputting the players name and email 
-while len(player_names)!= player_number: 
+for i in range(0, player_number): 
     player = input("Player name: ")
     email = input("Player email: ")
-    print("Player: ", player, "Email: ", email)
-    player_info = input("Is the above player information correct? Y/N ").upper()
-    if player_info != "Y" or player_info != "N":
-        print("That was not a correct response")
-        player_info = input("Is the above player information correct? Y/N ").upper()     
-    elif player_info == "Y":
-        player_names.append(player)
-        email_dict[player] = email
-    else:
-        print("Ok let's try that again")
+    player_names.append(player)
+    email_dict[player] = email
+      
 
 # Confirm players
 print("\n")
@@ -100,7 +93,7 @@ sender_email_pswd = (getpass("What is your gmail email password: "))
 
 # Sending emails to players 
 for player in list(email_dict.keys()): 
-    filename = player.lower() + ".txt"
+    filename = player
     with open(filename, 'r', encoding='utf-8') as file:
         file_content = file.read()
     
@@ -122,9 +115,9 @@ for player in list(email_dict.keys()):
 
     s.send_message(msg)
     del msg
-    
     os.remove(filename)
-        
+    
+      
 
     s.quit()
     

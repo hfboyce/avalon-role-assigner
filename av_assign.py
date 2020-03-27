@@ -13,8 +13,7 @@ def get_value(dictionary,value):
 
 def assigning_roles(player_names, percival=False, morgana=False, oberon=False):
     
-    """
-    Gets and prints the spreadsheet's header columns
+    """Gets and prints the spreadsheet's header columns
 
     Parameters
     ----------
@@ -30,11 +29,10 @@ def assigning_roles(player_names, percival=False, morgana=False, oberon=False):
    
     """
     
-    
     num_player = len(player_names)
     print("Playing with", num_player, "players" )
     assert num_player >= 5, "You need at least 5 players to plsy Avalon"
-    assert num_player <= 12, "You need less than 11 players to play Avalon"
+    assert num_player <= 12, "You need less than 11 players to plsy Avalon"
     
     if morgana == True: 
         assert percival == True, "You need Percival to be playing to use Morgana"
@@ -57,17 +55,23 @@ def assigning_roles(player_names, percival=False, morgana=False, oberon=False):
     if num_player >6:
         game_roles.append("Minion of Mordred")
 
+
     # 8 players add good
     if num_player >7:
         game_roles.append("Loyal Servant of Arthur")
+
 
     # 9 players add good
     if num_player >8:
         game_roles.append("Loyal Servant of Arthur")
 
+
+
     # 10 players add bad
     if num_player >9:
         game_roles.append("Minion of Mordred")
+
+
     
     
     # Special Roles 
@@ -94,7 +98,6 @@ def assigning_roles(player_names, percival=False, morgana=False, oberon=False):
         if "Morgana" in game_roles:
             print('You can either have Morgana or Oberon for this amount of players')
     
-
     
     # Let's assign a role to each player randomly 
     
@@ -102,6 +105,7 @@ def assigning_roles(player_names, percival=False, morgana=False, oberon=False):
         role_selected = random.choice(game_roles)
         game_roles.remove(role_selected)
         players_to_roles[player] = role_selected
+
     
     
     evil_roles_to_merlin = ['Oberon', "Morgana", "Assasin", "Minion of Mordred"]
@@ -121,13 +125,13 @@ def assigning_roles(player_names, percival=False, morgana=False, oberon=False):
     # OK now assign viewing ability to everyone. 
     
     for key, value in players_to_roles.items():
-        file = open(key + ".txt", "w") 
-        file.write("Hi " + key.capitalize() +", \n")
+        file = open(key, "w") 
+        file.write("Hi " + key +", \n")
         file.write("Your role in this game is: "+ value + '\n')  
         file.write('\n')  
         file.write("The players in this game are:"  + '\n')  
         for player in player_names: 
-             file.write("- " + player.capitalize()  + '\n')
+             file.write("- " + player  + '\n')
         file.write('\n')         
         if percival == True:
             file.write("You are playing with the Percival character"  + '\n') 
@@ -147,12 +151,12 @@ def assigning_roles(player_names, percival=False, morgana=False, oberon=False):
         if value == "Merlin":
             file.write("The servants of Mordred are:"  + '\n')
             for bad_guy in evil_players_to_merlin:
-                 file.write( "- " + bad_guy.capitalize() + '\n') 
+                 file.write( "- " + bad_guy + '\n') 
         
         if value in evil_roles_to_evil:
             file.write("The servants of Mordred are:"  + '\n')
             for bad_guy in evil_players_to_evil:
-                 file.write( "- " + bad_guy.capitalize()  + '\n') 
+                 file.write( "- " + bad_guy + '\n') 
             if oberon == True:
                 file.write("Since you are playing with Oberon, there is a third unknown evil player "  + '\n')
         
@@ -164,19 +168,16 @@ def assigning_roles(player_names, percival=False, morgana=False, oberon=False):
             merlin_player = get_value(players_to_roles, "Merlin")
             if morgana == True:
                 morgana_player = get_value(players_to_roles, "Morgana")
-                merlins = [merlin_player.capitalize(), morgana_player.capitalize()]
+                merlins = [merlin_player, morgana_player]
                 random.shuffle(merlins)
                 file.write("Since you are playing with Morgana, one of the following players is Merlin the other is \n Morgana, a servant of Mordred" + "\n") 
                 file.write( "- " + merlins[0] + '\n')
                 file.write( "- " + merlins[1] +'\n')
             else:
-                 file.write("In this case, Merlin is " +  merlin_player.capitalize() +'\n')
+                 file.write("In this case, Merlin is " +  merlin_player +'\n')
                         
                     
         if value == "Loyal Servant of Arthur":
             file.write("As a Loyal Servant of Arthur, you do not get insight into the other player's roles"  + '\n')
                     
-        return 
-        file.close() 
-
-   
+    return
