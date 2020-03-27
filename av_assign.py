@@ -3,6 +3,9 @@ import random
 import string
 
 def get_value(dictionary,value):
+    '''
+     Gets the dictionary keys depending on the value 
+    '''
     for key in dictionary:
         if dictionary[key] == value:
             return key
@@ -10,14 +13,27 @@ def get_value(dictionary,value):
 
 def assigning_roles(player_names, percival=False, morgana=False, oberon=False):
     
-    '''
-    
-    '''
+     """Gets and prints the spreadsheet's header columns
+
+    Parameters
+    ----------
+    player_names : list
+        The lists of all the players in the game 
+    percival : bool, optional
+        Whether or not the players decide to play with the special role of Percival. Good player in favour of good. 
+    morgana :  bool, optional
+        Whether or not the players decide to play with the special role of Morgana.  Evil player in favour of bad.
+    oberon :  bool, optional
+        Whether or not the players decide to play with the special role of Oberon Evil player in favour of good.   
+
+   
+    """
+
     
     num_player = len(player_names)
     print("Playing with", num_player, "players" )
     assert num_player >= 5, "You need at least 5 players to plsy Avalon"
-    assert num_player <= 12, "You need less than 11 players to plsy Avalon"
+    assert num_player <= 12, "You need less than 11 players to play Avalon"
     
     if morgana == True: 
         assert percival == True, "You need Percival to be playing to use Morgana"
@@ -35,30 +51,22 @@ def assigning_roles(player_names, percival=False, morgana=False, oberon=False):
     # 6 players add good
     if num_player >5:
         game_roles.append("Loyal Servant of Arthur")
-        print("Added Loyal Servant of Arthur")
 
     # 7 players add bad
     if num_player >6:
         game_roles.append("Minion of Mordred")
-        print("Added Minion of Mordred")
 
     # 8 players add good
     if num_player >7:
         game_roles.append("Loyal Servant of Arthur")
-        print("Added Loyal Servant of Arthur")
 
     # 9 players add good
     if num_player >8:
         game_roles.append("Loyal Servant of Arthur")
-        print("Added Loyal Servant of Arthur")
-
 
     # 10 players add bad
     if num_player >9:
         game_roles.append("Minion of Mordred")
-        print("Added Minion of Mordred")
-
-    print(game_roles)
     
     
     # Special Roles 
@@ -85,8 +93,7 @@ def assigning_roles(player_names, percival=False, morgana=False, oberon=False):
         if "Morgana" in game_roles:
             print('You can either have Morgana or Oberon for this amount of players')
     
-    print(game_roles)
-    print(len(game_roles))
+
     
     # Let's assign a role to each player randomly 
     
@@ -94,7 +101,6 @@ def assigning_roles(player_names, percival=False, morgana=False, oberon=False):
         role_selected = random.choice(game_roles)
         game_roles.remove(role_selected)
         players_to_roles[player] = role_selected
-    print(players_to_roles)
     
     
     evil_roles_to_merlin = ['Oberon', "Morgana", "Assasin", "Minion of Mordred"]
@@ -169,7 +175,7 @@ def assigning_roles(player_names, percival=False, morgana=False, oberon=False):
         if value == "Loyal Servant of Arthur":
             file.write("As a Loyal Servant of Arthur, you do not get insight into the other player's roles"  + '\n')
                     
-
+        return 
         file.close() 
 
    
