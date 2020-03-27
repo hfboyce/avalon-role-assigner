@@ -18,8 +18,9 @@ This is you changing your settings temporarily.
 python3 avalon.py
 ```
 
-It should prompt you for everything and so long as all your emails are correct and you have done step 2.
-
+It should prompt you for everything.
+_makes sure you are using a gmail account to send your roles out_ 
+So long as all your emails are correct and you have done step 2 this should email your friends.
 
 4. Get ready for a fun night! 
 
