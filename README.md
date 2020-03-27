@@ -27,5 +27,5 @@ So long as all your emails are correct and you have done step 2 this should emai
 A Jupyter notebook has also been provided to avoid the prompts on the command line. It gives a bit of a walk though as well. 
 
 ### Ideas 
-- [] voting script 
+-[] voting script 
 
