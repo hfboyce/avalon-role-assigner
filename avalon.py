@@ -33,7 +33,7 @@ while len(player_names)!= player_number:
     elif player_info == "Y":
         player_names.append(player)
         email_dict[player] = email
-    else player_info == "N":
+    else:
         print("Ok let's try that again")
 
 # Confirm players

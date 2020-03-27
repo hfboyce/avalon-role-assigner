@@ -13,7 +13,8 @@ def get_value(dictionary,value):
 
 def assigning_roles(player_names, percival=False, morgana=False, oberon=False):
     
-     """Gets and prints the spreadsheet's header columns
+    """
+    Gets and prints the spreadsheet's header columns
 
     Parameters
     ----------
@@ -28,7 +29,7 @@ def assigning_roles(player_names, percival=False, morgana=False, oberon=False):
 
    
     """
-
+    
     
     num_player = len(player_names)
     print("Playing with", num_player, "players" )
