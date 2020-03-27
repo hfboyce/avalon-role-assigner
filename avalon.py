@@ -114,6 +114,8 @@ for player in list(email_dict.keys()):
     
 
     s.send_message(msg)
+    
+    #deleting things 
     del msg
     os.remove(filename)
     

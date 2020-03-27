@@ -134,13 +134,13 @@ def assigning_roles(player_names, percival=False, morgana=False, oberon=False):
              file.write("- " + player  + '\n')
         file.write('\n')         
         if percival == True:
-            file.write("You are playing with the Percival character"  + '\n') 
+            file.write("You are playing with the Percival character."  + '\n') 
 
         if morgana == True: 
-            file.write("You are playing with the Morgana character"  + '\n')
+            file.write("You are playing with the Morgana character."  + '\n')
       
         if oberon == True:
-            file.write("You are playing with the Oberon character"  + '\n') 
+            file.write("You are playing with the Oberon character."  + '\n') 
         
         file.write('\n')  
         if value == "Morgana":
@@ -170,7 +170,7 @@ def assigning_roles(player_names, percival=False, morgana=False, oberon=False):
                 morgana_player = get_value(players_to_roles, "Morgana")
                 merlins = [merlin_player, morgana_player]
                 random.shuffle(merlins)
-                file.write("Since you are playing with Morgana, one of the following players is Merlin the other is \n Morgana, a servant of Mordred" + "\n") 
+                file.write("Since you are playing with Morgana, one of the following players is Merlin the other is \n Morgana, a servant of Mordred." + "\n") 
                 file.write( "- " + merlins[0] + '\n')
                 file.write( "- " + merlins[1] +'\n')
             else:
@@ -178,6 +178,6 @@ def assigning_roles(player_names, percival=False, morgana=False, oberon=False):
                         
                     
         if value == "Loyal Servant of Arthur":
-            file.write("As a Loyal Servant of Arthur, you do not get insight into the other player's roles"  + '\n')
+            file.write("As a Loyal Servant of Arthur, you do not get insight into the other players' roles."  + '\n')
                     
     return
