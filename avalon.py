@@ -8,7 +8,7 @@ from getpass import getpass
 import os
 
 
-## Choosing player numbers must be between 10 and 5
+# # Choosing player numbers must be between 10 and 5
 
 print("Hi! Welcome to online Avalon!")
 player_number = int(input("How many players do you want to play with today? "))
@@ -27,7 +27,7 @@ for i in range(0, player_number):
     email = input("Player email: ")
     player_names.append(player)
     email_dict[player] = email
-      
+
 
 # Confirm players
 print("\n")
@@ -35,7 +35,7 @@ print("The players for this game are:")
 print("------------------------------")
 for key, value in email_dict.items():
     print("Player: ", key, "Email: ", value)
-    
+
 
 # Special player selections 
 special_input = (input("Did you want to play with any special players (Percival, Morgana or Oberon)? Y/N ")).upper()
@@ -55,7 +55,7 @@ if special_input == "Y":
     else: 
         print("That is not a valid input, please try again")
         perc_in = (input("Did you want to play with Percival? Y/N ")).upper()
-        
+
 # Selecting if playing with Morgana     
     if percival == True: 
         morg_in = (input("Did you want to play with Morgana? Y/N ")).upper()
@@ -67,7 +67,7 @@ if special_input == "Y":
         else: 
             print("That is not a valid input, please try again")
             morgana = (input("Did you want to play with Percival? Y/N ")).upper()
-            
+
 # Selecting if playing with Oberon         
     ob_in = (input("Did you want to play with Oberon? Y/N ")).upper()
     if ob_in == "Y":
@@ -78,10 +78,10 @@ if special_input == "Y":
     else: 
         print("That is not a valid input, please try again")
         ob_in = upper(input("Did you want to play with Oberon? Y/N "))
+
         
-        
-        
-        
+
+
 # Randomly assigning roles and information 
 av.assigning_roles(player_names, percival, morgana, oberon)
 
@@ -116,10 +116,12 @@ for player in list(email_dict.keys()):
     s.send_message(msg)
     
     #deleting things 
-    del msg
     os.remove(filename)
+    del msg
     
       
 
     s.quit()
-    
+
+
+
